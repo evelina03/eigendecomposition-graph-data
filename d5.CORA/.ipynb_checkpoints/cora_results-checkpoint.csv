@@ -1,0 +1,4 @@
+node_label,is_feature_based,laplacian_type,number_of_eigenvectors,use_kmean_for_silhouette,silhouette_score,rand_index,duration,memory_used,cpu_used
+Cora,False,sym,7,True,0.9141635928293366,0.001308094242582357,670.0762622356415,-104.125,0.08243878400000026
+Cora,False,rw,7,True,0.1,0.0,23.783491849899292,5.40625,0.0074460799999997995
+Cora,False,ad,7,True,0.9514942258474711,-8.696474728292295e-05,684.8079218864441,-22.78125,0.07987609600000001
