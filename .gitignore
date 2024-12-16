@@ -1,2 +1,5 @@
 data/transactions/
 *.db.*
+data/transactions/system/neostore.transaction.db.0
+data/transactions/d1.iris/neostore.transaction.db.0
+data/transactions/neo4j/neostore.transaction.db.0
