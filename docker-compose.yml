@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  neo4j:
+    image: neo4j:4.4.0-enterprise
+    container_name: simkit
+    network_mode: "bridge"
+    #networks:
+     # - simkit-network
+    volumes:
+      - ./data:/data
+      - ./backup:/backups
+      - ./plugins:/plugins
+      - ./import:/import
+    ports:
+      - "7475:7474"  # Remapped HTTP port
+      - "7688:7687"  # Remapped Bolt port
+    environment:
+      - NEO4J_AUTH=neo4j/eigen1234
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+  #    - HTTP_PROXY=http://141.44.122.190:3128
+ #     - HTTPS_PROXY=http://141.44.122.190:3128
+#      - NO_PROXY=localhost,127.0.0.1
+
+  #jupyter:
+   # image: jupyter/base-notebook:latest
+#    container_name: jupyter-container
+ #   network_mode: host
+    #networks:
+     # - simkit-network
+   # volumes:
+    #  - /home/eignatova/eig_thesis/eigendecomposition-graph-data:/home/jovyan/work  # Mount current working directory
+  #  environment:
+   #   - HTTP_PROXY=http://141.44.122.190:3128
+    #  - HTTPS_PROXY=http://141.44.122.190:3128
+     # - NO_PROXY=localhost,127.0.0.1
+  #  command: start-notebook.sh --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.default_url=/tree
+  #  depends_on:
+   #   - neo4j
+    #ports:
+     # - "5001:8888"  # Expose Jupyter Notebook to local port 5000
+
+#networks:
+ # simkit-network:
+  #  external: true
